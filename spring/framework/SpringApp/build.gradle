@@ -19,7 +19,7 @@ dependencies {
 	compile group: 'org.springframework', name: 'spring-context-support', version: '4.2.2.RELEASE'
 	compile group: 'org.springframework', name: 'spring-jdbc', version: '4.2.2.RELEASE'
 	compile group: 'org.springframework', name: 'spring-aspects', version: '4.2.2.RELEASE'
-	compile group: 'aopalliance', name: 'aopalliance', version: '1.0
+	compile group: 'aopalliance', name: 'aopalliance', version: '1.0'
 	compile group: 'org.aspectj', name: 'aspectjweaver', version: '1.8.7'
 	
     testCompile 'org.springframework:spring-test:4.2.2.RELEASE'
