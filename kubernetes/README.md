@@ -13,7 +13,7 @@
 #### Service
 1. Creating loadbalancer service for replication controller - `kubectl expose rc <replication-controller-name> --type=LoadBalancer --name <name-of-service>`
 
-  **Note:** Minikube doesn’t support LoadBalancer services, so the service will never get an external IP. But you can access the service anyway through its external port  https://github.com/gautam-borkar/tutorials/edit/master/kubernetes/README.md#L22
+  **Note:** Minikube doesn’t support LoadBalancer services, so the service will never get an external IP. But you can access the service anyway through its external port  https://github.com/gautam-borkar/tutorials/blob/master/kubernetes/README.md#L22
 2. Get services - `kubectl get services`
 
 #### Minikube
