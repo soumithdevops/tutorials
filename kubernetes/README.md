@@ -8,7 +8,12 @@
 
 #### Pods
 1. Get pods - `kubectl get pods`
-2. Describer pod - `kubectl describe pod <pod-name>`
+2. Get pods with addiitonal details - `kubectl get pods -o wide`
+3. Describer pod - `kubectl describe pod <pod-name>`
+
+#### Replication Controller
+1. Get replication controller - `kubectl get replicationcontrollers`
+2. Scale replication controller - `kubectl scale rc <replication-controller-name> --replicas=3`
 
 #### Service
 1. Creating loadbalancer service for replication controller - `kubectl expose rc <replication-controller-name> --type=LoadBalancer --name <name-of-service>` <BR>
@@ -19,6 +24,7 @@
 1. Start Minikube - `minikube start`
 2. SSH to minikube vm - `minikube ssh`
 3. Opening loadbalancer service - `minikube service <loadbalancer-service-name>`
+4. Minikube dashboard - `minikube dashboard`
 
 ### Building docker image and push to docker hub
 1. Download the source code from github
