@@ -8,13 +8,20 @@
 2. Describe node - `kubectl describe node <node-name>`
 
 #### Pods
-1. Get pods - `kubectl get pods`
-2. Get pods with addiitonal details - `kubectl get pods -o wide`
-3. Describer pod - `kubectl describe pod <pod-name>`
+- Creating pod from kubectl run - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
+- Creating pod from yaml file - `kubectl create -f <yaml-file-name>.yaml`
+- Get pods - `kubectl get pods`
+- Get pods with addiitonal details - `kubectl get pods -o wide`
+- Get yaml file of deployed pod - `kubectl get po <pod-name> -o yaml`
+- Describe pod - `kubectl describe pod <pod-name>`
+- Logs - `kubectl logs <pod-name>`
+- Explain Pod definition - `kubectl explain po`
+- Explain each attribute of Pod definition - `kubectl explain pod.<attribute-name>`
 
 #### Replication Controller
-1. Get replication controller - `kubectl get replicationcontrollers`
-2. Scale replication controller - `kubectl scale rc <replication-controller-name> --replicas=3`
+- Creating replication controller - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
+- Get replication controller - `kubectl get replicationcontrollers`
+- Scale replication controller - `kubectl scale rc <replication-controller-name> --replicas=3`
 
 #### Service
 1. Creating loadbalancer service for replication controller - `kubectl expose rc <replication-controller-name> --type=LoadBalancer --name <name-of-service>` <BR>
