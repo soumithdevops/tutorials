@@ -8,17 +8,27 @@
 2. Describe node - `kubectl describe node <node-name>`
 
 #### Pods
-- Creating pod from kubectl run - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
-- Creating pod from yaml file - `kubectl create -f <yaml-file-name>.yaml`
-- Get pods - `kubectl get pods`
-- Get pods with addiitonal details - `kubectl get pods -o wide`
-- Get yaml file of deployed pod - `kubectl get po <pod-name> -o yaml`
-- Describe pod - `kubectl describe pod <pod-name>`
-- Logs - `kubectl logs <pod-name>`
-- Logs for each contained for multiple-container in pods - `kubectl logs <pod-name> -c <container-name>`
-- Explain Pod definition - `kubectl explain po`
-- Explain each attribute of Pod definition - `kubectl explain pod.<attribute-name>`
-- Conecting to pods -`kubectl port-forward <pod-name> <localhost-port-number>:<pod-port-number>`
+1. Creating pod from kubectl run - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
+1. Creating pod from yaml file - `kubectl create -f <yaml-file-name>.yaml`
+1. Get pods - `kubectl get pods`
+1. Get pods with addiitonal details - `kubectl get pods -o wide`
+1. Get yaml file of deployed pod - `kubectl get po <pod-name> -o yaml`
+1. Get pods by label - `kubectl get pods --show-labels`
+1. Get pods by specific labels - `kubectl get po -L <label-name-1>,<label-name-2>`
+1. Adding labels on existing pods - `kubectl label po <pod-name> <label-name>=<label-value>`
+1. Change label value - `kubectl label po <pod-name> <label-name>=<label-value> --overwrite`
+1. Listing pods using a label selector - `kubectl get po -l <label-name>=<label-value>`
+1. List all pods that include the label, whatever its value is - `kubectl get pods -l env`
+1. List all pods that dont have a label - `kubectl get pods -l '!<label-name>'`
+  1. `<label-name>!=<label-value>` to select pods with the <label-name> label with any value other than <label-value>
+  1. `<label-name> in (<label-value-1>,<label-value-2>)` to select pods with the <label-name> label set to either <label-value-1> or <label-value-2>
+ 1. `<label-name> notin (<label-value-1>,<label-value-2>)` to select pods with the `<label-name>` label set to any value other than `<label-value-1>` or `<label-value-2>`
+1. Describe pod - `kubectl describe pod <pod-name>`
+1. Logs - `kubectl logs <pod-name>`
+1. Logs for each contained for multiple-container in pods - `kubectl logs <pod-name> -c <container-name>`
+1. Explain Pod definition - `kubectl explain po`
+1. Explain each attribute of Pod definition - `kubectl explain pod.<attribute-name>`
+1. Conecting to pods -`kubectl port-forward <pod-name> <localhost-port-number>:<pod-port-number>`
 
 #### Replication Controller
 - Creating replication controller - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
