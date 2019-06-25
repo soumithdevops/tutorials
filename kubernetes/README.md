@@ -15,8 +15,10 @@
 - Get yaml file of deployed pod - `kubectl get po <pod-name> -o yaml`
 - Describe pod - `kubectl describe pod <pod-name>`
 - Logs - `kubectl logs <pod-name>`
+- Logs for each contained for multiple-container in pods - `kubectl logs <pod-name> -c <container-name>`
 - Explain Pod definition - `kubectl explain po`
 - Explain each attribute of Pod definition - `kubectl explain pod.<attribute-name>`
+- Conecting to pods -`kubectl port-forward <pod-name> <localhost-port-number>:<pod-port-number>`
 
 #### Replication Controller
 - Creating replication controller - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
