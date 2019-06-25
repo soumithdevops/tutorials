@@ -9,7 +9,8 @@
 
 #### Pods
 1. Creating pod from kubectl run - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
-1. Creating pod from yaml file - `kubectl create -f <yaml-file-name>.yaml`
+1. Creating pod from yaml file - `kubectl 
+-f <yaml-file-name>.yaml`
 1. Get pods - `kubectl get pods`
 1. Get pods with addiitonal details - `kubectl get pods -o wide`
 1. Get yaml file of deployed pod - `kubectl get po <pod-name> -o yaml`
@@ -30,12 +31,18 @@
 1. Logs for each contained for multiple-container in pods - `kubectl logs <pod-name> -c <container-name>`
 1. Explain Pod definition - `kubectl explain po`
 1. Explain each attribute of Pod definition - `kubectl explain pod.<attribute-name>`
-1. Conecting to pods -`kubectl port-forward <pod-name> <localhost-port-number>:<pod-port-number>`
+1. Conecting to pods -`kubectl port-forward <pod-name> <localhost-port-number>:<pod-port-number>`.
+1. Deleting pods - `kubectl delete po <pod-name>`
+1. Delete all pods in current namespace - `kubectl delete po --all`
 
 #### Namespaces
 1. List namespaces - `kubectl get ns`
 1. Get pods in namespace - `kubectl get po --namespace <namespace-name>`
-1. 
+1. Create a namespace - `kubectl create namespace <namespace-name>`
+1. Create namespace from yaml file - `kubectl create -f <yaml-filename>`
+1. Create pod in namespace - `kubectl create -f <yaml-file> -n <namespace-name>`
+1. Delete the namespace - `kubectl delete ns <namespace-name>`
+1. Deleting all resources in namespace - `kubectl delete all --all`
 
 #### Replication Controller
 - Creating replication controller - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
