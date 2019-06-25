@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubernetes-tutorial-yaml-with-label
+  labels:
+    creation-method: manual
+    env: prod
+spec:
+  containers:
+  - image: gautamborkar/kubernetes-tutorial
+    name: kubernetes-tutorial
+    ports:
+    - containerPort: 8080
+      protocol: TCP
