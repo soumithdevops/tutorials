@@ -20,15 +20,22 @@
 1. Listing pods using a label selector - `kubectl get po -l <label-name>=<label-value>`
 1. List all pods that include the label, whatever its value is - `kubectl get pods -l env`
 1. List all pods that dont have a label - `kubectl get pods -l '!<label-name>'`
-  1. `<label-name>!=<label-value>` to select pods with the <label-name> label with any value other than <label-value>
-  1. `<label-name> in (<label-value-1>,<label-value-2>)` to select pods with the <label-name> label set to either <label-value-1> or <label-value-2>
- 1. `<label-name> notin (<label-value-1>,<label-value-2>)` to select pods with the `<label-name>` label set to any value other than `<label-value-1>` or `<label-value-2>`
+   - `<label-name>!=<label-value>` to select pods with the `<label-name>` label with any value other than `<label-value>`
+   - `<label-name> in (<label-value-1>,<label-value-2>)` to select pods with the `<label-name>` label set to either `<label-value-1>` or `<label-value-2>`
+   - `<label-name> notin (<label-value-1>,<label-value-2>)` to select pods with the `<label-name>` label set to any value other than `<label-value-1>` or `<label-value-2>`
+1. List pods that match multiple labels - `kubectl get pods -L <label-name-1>=<label-value-1>,<label-name-2>=<label-value-2>`
+1. Annotate pods - `kubectl annotate pods <pod-name> <annotation-name>="<annotation-value>"`
 1. Describe pod - `kubectl describe pod <pod-name>`
 1. Logs - `kubectl logs <pod-name>`
 1. Logs for each contained for multiple-container in pods - `kubectl logs <pod-name> -c <container-name>`
 1. Explain Pod definition - `kubectl explain po`
 1. Explain each attribute of Pod definition - `kubectl explain pod.<attribute-name>`
 1. Conecting to pods -`kubectl port-forward <pod-name> <localhost-port-number>:<pod-port-number>`
+
+#### Namespaces
+1. List namespaces - `kubectl get ns`
+1. Get pods in namespace - `kubectl get po --namespace <namespace-name>`
+1. 
 
 #### Replication Controller
 - Creating replication controller - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
