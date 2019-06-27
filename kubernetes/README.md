@@ -28,6 +28,7 @@
 1. Annotate pods - `kubectl annotate pods <pod-name> <annotation-name>="<annotation-value>"`
 1. Describe pod - `kubectl describe pod <pod-name>`
 1. Logs - `kubectl logs <pod-name>`
+1. Logs previous pods `kubectl logs <pod-name> --previous`
 1. Logs for each contained for multiple-container in pods - `kubectl logs <pod-name> -c <container-name>`
 1. Explain Pod definition - `kubectl explain po`
 1. Explain each attribute of Pod definition - `kubectl explain pod.<attribute-name>`
