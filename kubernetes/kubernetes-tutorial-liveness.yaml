@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: pod
+metadata:
+  name: kubernetes-liveness
+spec:
+  containers:
+  - image: gautamborkar/kubernetes-tutorial-unhealthy
+    name: kubernetes-tutorial-unhealthy
+    ports:
+    - containerPort: 8080
+      protocol: TCP
+    livenessProbe:
+      httpGet:
+        path: /
+        port: 8080
+        
