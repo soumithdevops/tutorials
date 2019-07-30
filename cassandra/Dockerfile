@@ -1,15 +1,16 @@
-DROP KEYSPACE IF EXISTS musicdb;
+FROM cassandra
 
-CREATE KEYSPACE musicdb WITH replication = 
-{'class':'SimpleStrategy','replication_factor':1};
+RUN apt-get update; \
+	apt-get install -y vim \
+	; \
+	rm -rf /var/lib/apt/lists/*
 
-USE musicdb;
+COPY cql /root/cql
 
-CREATE TABLE album (
-	title VARCHAR,
-	year INT,
-	performer VARCHAR,
-	genre VARCHAR,
-	tracks MAP<INT,VARCHAR>,
-	PRIMARY KEY ((title, year))
-);
+# 7000: intra-node communication
+# 7001: TLS intra-node communication
+# 7199: JMX
+# 9042: CQL
+# 9160: thrift service
+EXPOSE 7000 7001 7199 9042 9160
+CMD ["cassandra", "-f"]
