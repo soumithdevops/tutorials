@@ -1,0 +1,19 @@
+apiVersion: apps/v1beta2
+kind: ReplicaSet
+metadata:
+  name: kubernetes-tutorial-replicaset
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kubernetes-tutorial-replicaset
+  template:
+    metadata:
+      labels:
+        app: kubernetes-tutorial-replicaset
+    spec:
+      containers:
+        - name: kubernetes-tutorial-replicaset
+          image: gautamborkar/kubernetes-tutorial
+          ports:
+            - containerPort: 8080
