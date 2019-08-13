@@ -49,6 +49,18 @@
 - Creating replication controller - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
 - Get replication controller - `kubectl get replicationcontrollers`
 - Scale replication controller - `kubectl scale rc <replication-controller-name> --replicas=3`
+- Editing replication controller - `kubectl edit rc <replication-controller-name>`
+- Deleting replication controller and deleting the pods - `kubectl delete rc <replication-controller-name>`
+- Deleting replication controller without deleting the pods - `kubectl delete rc <replication-controller-name> --cascade=false`
+
+#### Replica Set
+- Get replica set - `kubectl get rs`
+- Deleting replica set - `kubectl delete rs <replica-set-name>`
+- Operators in replica set :-
+   - In: Label’s value must match one of the specified values.
+   - NotIn: Label’s value must not match any of the specified values.
+   - Exists: Pod must include a label with the specified key (the value isn’t important). When using this operator, you shouldn’t specify the values field.
+   - DoesNotExist: Pod must not include a label with the specified key. The values property must not be specified.
 
 #### Service
 1. Creating loadbalancer service for replication controller - `kubectl expose rc <replication-controller-name> --type=LoadBalancer --name <name-of-service>` <BR>
@@ -77,4 +89,6 @@
   `kubectl run kubernetes-tutorial --image=gautamborkar/kubernetes-tutorial --port=8080 --generator=run/v1`
 3. Creating a Service object 
   `kubectl expose rc kubernetes-tutorial --type=LoadBalancer --name kubernetes-tutorial-http`
-
+  
+### Michellenous 
+1. Configuring kubectl editor - `export KUBE_EDITOR="<editor-location>"`
