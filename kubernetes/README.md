@@ -74,9 +74,9 @@
 - Scale job - `kubectl scale job <job-name> --replicas <number-of-pods>`
 
 #### Service
-1. Creating loadbalancer service for replication controller - `kubectl expose rc <replication-controller-name> --type=LoadBalancer --name <name-of-service>` <BR>
+- Creating loadbalancer service for replication controller - `kubectl expose rc <replication-controller-name> --type=LoadBalancer --name <name-of-service>` <BR>
   **Note:** Minikube doesn’t support LoadBalancer services, so the service will never get an external IP. But you can access the service anyway through its external port  [Refer Opening loadbalancer service](https://github.com/gautam-borkar/tutorials/blob/master/kubernetes/README.md#minikube)<BR>
-2. Get services - `kubectl get services`
+- Get services - `kubectl get services`
 
 #### Minikube
 1. Start Minikube - `minikube start`
