@@ -83,6 +83,8 @@
 2. SSH to minikube vm - `minikube ssh`
 3. Opening loadbalancer service - `minikube service <loadbalancer-service-name>`
 4. Minikube dashboard - `minikube dashboard`
+5. Minikube Get ip of node - `minikube ip`
+6. Minikube access your NodePort services - `minikube service <service-name> [-n <namespace>]`
 
 ### Building docker image and push to docker hub
 1. Download the source code from github
