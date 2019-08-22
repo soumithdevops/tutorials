@@ -13,6 +13,7 @@
 1. Creating pod from yaml file - `kubectl 
 -f <yaml-file-name>.yaml`
 1. Get pods - `kubectl get pods`
+1. Get pods all namespace - `kubectl get pods --all-namespaces`
 1. Get pods with addiitonal details - `kubectl get pods -o wide`
 1. Get yaml file of deployed pod - `kubectl get po <pod-name> -o yaml`
 1. Get pods by label - `kubectl get pods --show-labels`
@@ -38,13 +39,13 @@
 1. Delete all pods in current namespace - `kubectl delete po --all`
 
 #### Namespaces
-1. List namespaces - `kubectl get ns`
-1. Get pods in namespace - `kubectl get po --namespace <namespace-name>`
-1. Create a namespace - `kubectl create namespace <namespace-name>`
-1. Create namespace from yaml file - `kubectl create -f <yaml-filename>`
-1. Create pod in namespace - `kubectl create -f <yaml-file> -n <namespace-name>`
-1. Delete the namespace - `kubectl delete ns <namespace-name>`
-1. Deleting all resources in namespace - `kubectl delete all --all`
+- List namespaces - `kubectl get ns`
+- Get pods in namespace - `kubectl get po --namespace <namespace-name>`
+- Create a namespace - `kubectl create namespace <namespace-name>`
+- Create namespace from yaml file - `kubectl create -f <yaml-filename>`
+- Create pod in namespace - `kubectl create -f <yaml-file> -n <namespace-name>`
+- Delete the namespace - `kubectl delete ns <namespace-name>`
+- Deleting all resources in namespace - `kubectl delete all --all`
 
 #### Replication Controller
 - Creating replication controller - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
@@ -79,29 +80,31 @@
 - Get services - `kubectl get services`
 
 #### Minikube
-1. Start Minikube - `minikube start`
-2. SSH to minikube vm - `minikube ssh`
-3. Opening loadbalancer service - `minikube service <loadbalancer-service-name>`
-4. Minikube dashboard - `minikube dashboard`
-5. Minikube Get ip of node - `minikube ip`
-6. Minikube access your NodePort services - `minikube service <service-name> [-n <namespace>]`
+- Start Minikube - `minikube start`
+- SSH to minikube vm - `minikube ssh`
+- Opening loadbalancer service - `minikube service <loadbalancer-service-name>`
+- Minikube dashboard - `minikube dashboard`
+- Minikube Get ip of node - `minikube ip`
+- Minikube access your NodePort services - `minikube service <service-name> [-n <namespace>]`
+- Check if Ingress is installed - `minikube addons list`
+- Enable Ingress controller - `minikube addons enable ingress`
 
 ### Building docker image and push to docker hub
-1. Download the source code from github
+- Download the source code from github
   `git clone git@github.com:gautam-borkar/tutorials.git`
-2. Build the docker image
+- Build the docker image
   `docker build -t kubernetes-tutorial .`
-3. Login to docker
+- Login to docker
   `docker login`
-4. Push to docker hub
+- Push to docker hub
   `docker push gautamborkar/kubernetes-tutorial`
   
 ### Running the tutorial project
-1. Start minikube
-2. Running the app in kubernetes
+- Start minikube
+- Running the app in kubernetes
   `kubectl run kubernetes-tutorial --image=gautamborkar/kubernetes-tutorial --port=8080 --generator=run/v1`
-3. Creating a Service object 
+- Creating a Service object 
   `kubectl expose rc kubernetes-tutorial --type=LoadBalancer --name kubernetes-tutorial-http`
   
 ### Michellenous 
-1. Configuring kubectl editor - `export KUBE_EDITOR="<editor-location>"`
+- Configuring kubectl editor - `export KUBE_EDITOR="<editor-location>"`
