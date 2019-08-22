@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kubernetes-tutorial-ingress
+spec:
+  rules: 
+    - host: kubernetes-tutorial-ingress.example.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: kubernetes-tutorial-nodeport
+              servicePort: 80
+              
