@@ -9,6 +9,6 @@ spec:
         paths:
           - path: /
             backend:
-              serviceName: kubernetes-tutorial-nodeport
-              servicePort: 80
+              serviceName: kubernetes-tutorial-node-port
+              servicePort: 30123
               
