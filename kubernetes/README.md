@@ -4,8 +4,9 @@
 1. Cluster Info - `kubectl cluster-info`
 
 #### Nodes
-1. Get Node - `kubectl get nodes`
-2. Describe node - `kubectl describe node <node-name>`
+- Get Node - `kubectl get nodes`
+- Describe node - `kubectl describe node <node-name>`
+- Adding label - `kubectl label node <node-name> <label-name>=<label-value>`
 
 #### Pods
 1. Creating pod from kubectl run - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
@@ -49,17 +50,41 @@
 - Creating replication controller - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
 - Get replication controller - `kubectl get replicationcontrollers`
 - Scale replication controller - `kubectl scale rc <replication-controller-name> --replicas=3`
+- Editing replication controller - `kubectl edit rc <replication-controller-name>`
+- Deleting replication controller and deleting the pods - `kubectl delete rc <replication-controller-name>`
+- Deleting replication controller without deleting the pods - `kubectl delete rc <replication-controller-name> --cascade=false`
+
+#### Replica Set
+- Get replica set - `kubectl get rs`
+- Deleting replica set - `kubectl delete rs <replica-set-name>`
+- Operators in replica set :-
+   - In: Label’s value must match one of the specified values.
+   - NotIn: Label’s value must not match any of the specified values.
+   - Exists: Pod must include a label with the specified key (the value isn’
+   t important). When using this operator, you shouldn’t specify the values field.
+   - DoesNotExist: Pod must not include a label with the specified key. The values property must not be specified.
+
+#### Daemon Set
+- Get daemon set - `kubectl get ds`
+- Deleting daemon set - `kubectl delete ds <daemonset-name>`
+
+#### Job
+- Get job - `kubectl get jobs`
+- Deleting job - `kubectl delete job <job-name>`
+- Scale job - `kubectl scale job <job-name> --replicas <number-of-pods>`
 
 #### Service
-1. Creating loadbalancer service for replication controller - `kubectl expose rc <replication-controller-name> --type=LoadBalancer --name <name-of-service>` <BR>
+- Creating loadbalancer service for replication controller - `kubectl expose rc <replication-controller-name> --type=LoadBalancer --name <name-of-service>` <BR>
   **Note:** Minikube doesn’t support LoadBalancer services, so the service will never get an external IP. But you can access the service anyway through its external port  [Refer Opening loadbalancer service](https://github.com/gautam-borkar/tutorials/blob/master/kubernetes/README.md#minikube)<BR>
-2. Get services - `kubectl get services`
+- Get services - `kubectl get services`
 
 #### Minikube
 1. Start Minikube - `minikube start`
 2. SSH to minikube vm - `minikube ssh`
 3. Opening loadbalancer service - `minikube service <loadbalancer-service-name>`
 4. Minikube dashboard - `minikube dashboard`
+5. Minikube Get ip of node - `minikube ip`
+6. Minikube access your NodePort services - `minikube service <service-name> [-n <namespace>]`
 
 ### Building docker image and push to docker hub
 1. Download the source code from github
@@ -77,4 +102,6 @@
   `kubectl run kubernetes-tutorial --image=gautamborkar/kubernetes-tutorial --port=8080 --generator=run/v1`
 3. Creating a Service object 
   `kubectl expose rc kubernetes-tutorial --type=LoadBalancer --name kubernetes-tutorial-http`
-
+  
+### Michellenous 
+1. Configuring kubectl editor - `export KUBE_EDITOR="<editor-location>"`
