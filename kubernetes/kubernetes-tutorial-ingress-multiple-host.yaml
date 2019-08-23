@@ -11,6 +11,9 @@ spec:
             backend:
               serviceName: kubernetes-tutorial-node-port
               servicePort: 80
+    - host: foo-bar.example.com
+      http:
+        paths:
           - path: /foo
             backend:
               serviceName: bar
