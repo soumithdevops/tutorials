@@ -7,8 +7,13 @@ spec:
     - host: kubernetes-tutorial-ingress.example.com
       http:
         paths:
-          - path: /
+          - path: /kubernetes-tutorial
             backend:
               serviceName: kubernetes-tutorial-node-port
               servicePort: 80
+          - path: /foo
+            backend:
+              serviceName: bar
+              servicePort: 80
+              
               
