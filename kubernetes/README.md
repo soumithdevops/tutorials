@@ -78,6 +78,7 @@
 - Creating loadbalancer service for replication controller - `kubectl expose rc <replication-controller-name> --type=LoadBalancer --name <name-of-service>` <BR>
   **Note:** Minikube doesn’t support LoadBalancer services, so the service will never get an external IP. But you can access the service anyway through its external port  [Refer Opening loadbalancer service](https://github.com/gautam-borkar/tutorials/blob/master/kubernetes/README.md#minikube)<BR>
 - Get services - `kubectl get services`
+- Creating DNS pod - `kubectl run dnsutils --image=tutum/dnsutils --generator=run-pod/v1 --command -- sleep infinity`
 
 #### Ingress Controller
 - Create the private key and certificate 
@@ -85,6 +86,8 @@
    openssl genrsa -out tls.key 2048
    openssl req -new -x509 -key tls.key -out tls.cert -days 360 -subj /CN=<ingress-hostname>
    ```
+- Create secret - `kubectl create secret tls tls-secret --cert=tls.cert --key=tls.key`
+
 #### Minikube
 - Start Minikube - `minikube start`
 - SSH to minikube vm - `minikube ssh`
