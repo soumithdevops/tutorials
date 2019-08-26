@@ -1,7 +1,7 @@
 ## Kubernetes Cheat Sheet
 ### Important Commands
 #### Cluster
-1. Cluster Info - `kubectl cluster-info`
+- Cluster Info - `kubectl cluster-info`
 
 #### Nodes
 - Get Node - `kubectl get nodes`
@@ -9,34 +9,34 @@
 - Adding label - `kubectl label node <node-name> <label-name>=<label-value>`
 
 #### Pods
-1. Creating pod from kubectl run - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
-1. Creating pod from yaml file - `kubectl 
+- Creating pod from kubectl run - `kubectl run <name-replication-controller> --image=<image-registry-location> --port=<port-number> --generator=run/v1`
+- Creating pod from yaml file - `kubectl 
 -f <yaml-file-name>.yaml`
-1. Get pods - `kubectl get pods`
-1. Get pods all namespace - `kubectl get pods --all-namespaces`
-1. Get pods with addiitonal details - `kubectl get pods -o wide`
-1. Get yaml file of deployed pod - `kubectl get po <pod-name> -o yaml`
-1. Get pods by label - `kubectl get pods --show-labels`
-1. Get pods by specific labels - `kubectl get po -L <label-name-1>,<label-name-2>`
-1. Adding labels on existing pods - `kubectl label po <pod-name> <label-name>=<label-value>`
-1. Change label value - `kubectl label po <pod-name> <label-name>=<label-value> --overwrite`
-1. Listing pods using a label selector - `kubectl get po -l <label-name>=<label-value>`
-1. List all pods that include the label, whatever its value is - `kubectl get pods -l env`
-1. List all pods that dont have a label - `kubectl get pods -l '!<label-name>'`
+- Get pods - `kubectl get pods`
+- Get pods all namespace - `kubectl get pods --all-namespaces`
+- Get pods with addiitonal details - `kubectl get pods -o wide`
+- Get yaml file of deployed pod - `kubectl get po <pod-name> -o yaml`
+- Get pods by label - `kubectl get pods --show-labels`
+- Get pods by specific labels - `kubectl get po -L <label-name-1>,<label-name-2>`
+- Adding labels on existing pods - `kubectl label po <pod-name> <label-name>=<label-value>`
+- Change label value - `kubectl label po <pod-name> <label-name>=<label-value> --overwrite`
+- Listing pods using a label selector - `kubectl get po -l <label-name>=<label-value>`
+- List all pods that include the label, whatever its value is - `kubectl get pods -l env`
+- List all pods that dont have a label - `kubectl get pods -l '!<label-name>'`
    - `<label-name>!=<label-value>` to select pods with the `<label-name>` label with any value other than `<label-value>`
    - `<label-name> in (<label-value-1>,<label-value-2>)` to select pods with the `<label-name>` label set to either `<label-value-1>` or `<label-value-2>`
    - `<label-name> notin (<label-value-1>,<label-value-2>)` to select pods with the `<label-name>` label set to any value other than `<label-value-1>` or `<label-value-2>`
-1. List pods that match multiple labels - `kubectl get pods -L <label-name-1>=<label-value-1>,<label-name-2>=<label-value-2>`
-1. Annotate pods - `kubectl annotate pods <pod-name> <annotation-name>="<annotation-value>"`
-1. Describe pod - `kubectl describe pod <pod-name>`
-1. Logs - `kubectl logs <pod-name>`
-1. Logs previous pods `kubectl logs <pod-name> --previous`
-1. Logs for each contained for multiple-container in pods - `kubectl logs <pod-name> -c <container-name>`
-1. Explain Pod definition - `kubectl explain po`
-1. Explain each attribute of Pod definition - `kubectl explain pod.<attribute-name>`
-1. Conecting to pods -`kubectl port-forward <pod-name> <localhost-port-number>:<pod-port-number>`.
-1. Deleting pods - `kubectl delete po <pod-name>`
-1. Delete all pods in current namespace - `kubectl delete po --all`
+- List pods that match multiple labels - `kubectl get pods -L <label-name-1>=<label-value-1>,<label-name-2>=<label-value-2>`
+- Annotate pods - `kubectl annotate pods <pod-name> <annotation-name>="<annotation-value>"`
+- Describe pod - `kubectl describe pod <pod-name>`
+- Logs - `kubectl logs <pod-name>`
+- Logs previous pods `kubectl logs <pod-name> --previous`
+- Logs for each contained for multiple-container in pods - `kubectl logs <pod-name> -c <container-name>`
+- Explain Pod definition - `kubectl explain po`
+- Explain each attribute of Pod definition - `kubectl explain pod.<attribute-name>`
+- Conecting to pods -`kubectl port-forward <pod-name> <localhost-port-number>:<pod-port-number>`.
+- Deleting pods - `kubectl delete po <pod-name>`
+- Delete all pods in current namespace - `kubectl delete po --all`
 
 #### Namespaces
 - List namespaces - `kubectl get ns`
