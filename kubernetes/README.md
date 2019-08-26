@@ -79,6 +79,12 @@
   **Note:** Minikube doesn’t support LoadBalancer services, so the service will never get an external IP. But you can access the service anyway through its external port  [Refer Opening loadbalancer service](https://github.com/gautam-borkar/tutorials/blob/master/kubernetes/README.md#minikube)<BR>
 - Get services - `kubectl get services`
 
+#### Ingress Controller
+- Create the private key and certificate 
+   ```
+   openssl genrsa -out tls.key 2048
+   openssl req -new -x509 -key tls.key -out tls.cert -days 360 -subj /CN=<ingress-hostname>
+   ```
 #### Minikube
 - Start Minikube - `minikube start`
 - SSH to minikube vm - `minikube ssh`
