@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: kubernetes-tutorial-ingress-tls
+spec:
+  tls:
+    - host:
+      - kubenetes-tutorial-ingress.example.com
+      secretName: tls-secret
+    rules:
+      - host: kubenetes-tutorial-ingress.example.com
+        http:
+        paths:
+          - path: /
+            backend:
+              servicename: kubenetes-tutorial-node-port
+              servicePort: 80
+              
