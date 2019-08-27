@@ -88,6 +88,9 @@
    ```
 - Create secret - `kubectl create secret tls tls-secret --cert=tls.cert --key=tls.key`
 
+#### Port Forwards
+- Port forward - `kubectl port-forward <pod-name> <localPort>:<containerPort>`
+
 #### Minikube
 - Start Minikube - `minikube start`
 - SSH to minikube vm - `minikube ssh`
